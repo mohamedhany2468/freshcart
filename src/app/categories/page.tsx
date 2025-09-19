@@ -1,0 +1,55 @@
+import getAllSubCategories from '@/apis/allCategories'
+import React from 'react'
+import CradCategiores from '../_Components/CradCategiores/CradCategiores'
+import  imgLayout from"@/assets/1461f3d6ff74c027a1888544144abe4be6e02cbf.jpg"
+import Image from 'next/image';
+import Link from 'next/link';
+import { Metadata } from 'next';
+import { Category, DaumCategory } from '@/types/category.type';
+
+
+export const metadata: Metadata = {
+  title: "Categories",
+};
+async function page() {
+const data = await getAllSubCategories()
+console.log(data);
+
+  return (<>
+   <div  className='relative'>
+  <Image src={imgLayout} className='w-full md:h-[316px] h-[216px] object-cover opacity-50' alt=''/>
+
+<div className='absolute top-[50%] left-[50%] translate-x-[-50%] '>
+  <h2 className='font-medium text-4xl relative z-20  text-center'>Categories</h2>
+<div className=" text-sm mt-4">
+  <ul className='flex'>
+    <li className='font-bold'><Link href={"/home"} >Home</Link> <i className="fa-solid fa-angle-right me-1"></i></li>
+    <li className='font-bold'><Link href={"/prodects"} >Shop</Link> <i className="fa-solid fa-angle-right me-1"></i></li>
+    <li>Categories</li>
+ 
+  </ul>
+</div>
+</div>
+ </div>
+ <div className='h-[90px] w-full bg-[#F9F1E7] flex justify-center items-center'>
+  <div className='flex items-center gap-2'>
+   <h2 className='font-bold'>Show</h2>
+   <p className='bg-white w-fit py-2 px-2'>10</p>
+
+  </div>
+ </div>
+  <div className="px-5 md:px-0 w-full md:w-[80%] mx-auto ">
+
+    <div className=" flex flex-wrap  ">
+
+  {data.map(function( categery:DaumCategory , idx:number){
+    return   <CradCategiores key={idx} cate={categery}/>
+  })}
+    </div>
+  </div>
+
+  </>
+  )
+}
+
+export default page
