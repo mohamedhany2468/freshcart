@@ -8,6 +8,11 @@ import type { Orders } from "@/types/AllOrder";
 
 export async function getAllOrder(): Promise<{ data: Orders[] }> {
     const token = await getMyToken();
+
+
+    if (!token) {
+  throw new Error("No auth token found");
+}
     const { id } = jwtDecode(token as string) as { id: string };
     console.log(id);
     const data = await axios.get<{ data: Orders[] }>(`https://ecommerce.routemisr.com/api/v1/orders/user/${id}`);

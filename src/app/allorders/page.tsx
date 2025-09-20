@@ -9,7 +9,7 @@ const data = await getAllOrder()
 console.log(data);
 
 
-
+  
   return (
     <>
    <div  className='relative'>
@@ -31,21 +31,24 @@ console.log(data);
     
     
     <div className='w-full md:w-[80%] mx-auto px-5 md:px-0'>
-      {data.data.map(function(order:Orders , idx:number){
-        return <div key={idx}  className='bg-gray-50 p-5 rounded-xl mt-5 '>
-<div className='border-b-2 mb-3 border-black'>
+      {data.map(function(order:Orders , idx:number){
+        return <div key={idx}  className='bg-gray-50 p-5   rounded-xl mt-5 '>
+<div className='border-b-2 mb-3 border-black flex flex-wrap '>
 
   {order.cartItems.map(function(items:CartItem, idx:number){
-return <div key={idx} className='flex flex-nowrap'> 
-<div className=''>
+return <div key={idx} className=''> 
+<div >
+<div>
 
 <Image src={items.product.imageCover} alt='' width={200} height={200}/>
-<h2 className='font-medium line-clamp-1 '>{items.product.title}</h2>
+<h2 className='font-medium line-clamp-1 w-1/2 text-center'>{items.product.title}</h2>
+</div>
 </div>
 </div>
   } )}
-<h2 className='font-bold text-amber-400 mb-2'>total Order Price : {order.totalOrderPrice}EGP</h2>
+  
 </div>
+<h2 className='font-bold text-amber-400 mb-2'>total Order Price : {order.totalOrderPrice}EGP</h2>
 <h2 className='font-bold'>payment Method Type : {order.paymentMethodType}</h2>
         </div>
       })}
