@@ -19,6 +19,7 @@ interface BtnAddWishlistResponse {
 interface BtnAddWishlistProps {
   id: string;
   btn: boolean;
+
 }
 
 function BtnAddWishlist({ id, btn }: BtnAddWishlistProps) {
@@ -48,9 +49,9 @@ function BtnAddWishlist({ id, btn }: BtnAddWishlistProps) {
   return (
     <div>
       {btn === true ? 
-      <button  className={`${heart&& "text-red-600"} text-[#B88E2F] bg-white md:px-15 py-2 px-10 font-bold hover:bg-white  cursor-pointer  group-hover:block`} onClick={hundelAddCart} >  <MdFavoriteBorder size={27}/></button>
+      <button  className={`${heart&& "text-red-600"} text-[#B88E2F]   py-2 font-bold   cursor-pointer  group-hover:block`} onClick={hundelAddCart} >  <MdFavoriteBorder size={27}/></button>
       :
-      <button  className={`hidden  text-[#B88E2F] font-bold  cursor-pointer  group-hover:block`} onClick={hundelAddCart}  >  <MdFavoriteBorder size={27}/></button>
+      <button  className={` text-[#B88E2F] font-bold  cursor-pointer  group-hover:block`} onClick={hundelAddCart}  >  <MdFavoriteBorder size={27}/></button>
        }
       </div>
   )

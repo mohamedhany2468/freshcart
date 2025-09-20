@@ -11,6 +11,7 @@ import { toast } from 'sonner'
 interface BtnToAddCartProps {
   id: string;
   btn: boolean;
+
 }
 
 import { Cart } from '@/types/Cart.type';
@@ -23,7 +24,7 @@ interface AddProductResponse {
   data?: Cart['data'];
 }
 
-function BtnToAddCart({ id, btn }: BtnToAddCartProps) {
+function BtnToAddCart({ id, btn ,}: BtnToAddCartProps) {
    
 
   // يجب تعريف نوع context بشكل صحيح في CartContext
@@ -47,8 +48,8 @@ function BtnToAddCart({ id, btn }: BtnToAddCartProps) {
         }
     }
   return (<>
-    {btn === true ? <Button  className=' border-1 border-[#B88E2F]  w-96 text-[#B88E2F] bg-white md:px-15 py-2 px-10 font-bold hover:bg-white  cursor-pointer  group-hover:block left' onClick={hundelAddCart}>Add to Crat</Button>:
-      <Button  className=' hidden text-[#B88E2F] bg-white md:px-8 py-2 px-10 font-bold hover:bg-white  cursor-pointer  group-hover:block left' onClick={hundelAddCart}>Add to Crat</Button>
+    {btn === true ? <Button  className=' border-1 border-[#B88E2F]   text-[#B88E2F] bg-white md:px-15 me-2 px-18 md:w-96 py-2 font-bold hover:bg-white  cursor-pointer  group-hover:block left' onClick={hundelAddCart}>Add to Crat</Button>:
+      <Button  className={`text-[#B88E2F] bg-white md:px-8 py-2 px-10 font-bold hover:bg-white  cursor-pointer  group-hover:block left`} onClick={hundelAddCart}>Add to Crat</Button>
 
     }
   </>

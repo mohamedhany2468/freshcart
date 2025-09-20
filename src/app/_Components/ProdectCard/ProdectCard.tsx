@@ -23,11 +23,11 @@ function ProdectCard({product}:{product:ProductType}) {
     <Image
       src={product.imageCover}
       alt=""  width={300} height={300} className='w-full'/>
-       <div className='absolute top-[100%] start-0 end-0 bottom-0 bg-neutral-950/70 flex justify-center items-center flex-wrap group-hover:top-0 duration-500 ease-in'>
-       <div className='px-5 flex items-center'>
+       <div className='absolute  top-[100%] start-0 end-0 bottom-0 bg-neutral-950/70 flex justify-center items-center flex-wrap group-hover:top-0 duration-500 ease-in'>
+       <div className='px-5 group-hover:flex items-center hidden'>
 
-<BtnToAddCart id={product.id} btn={false}/> 
-<BtnAddWishlist id={product.id} btn={false}/> 
+<BtnToAddCart id={product.id} btn={false} /> 
+<BtnAddWishlist id={product.id} btn={false} /> 
 
        </div>
 
@@ -35,16 +35,21 @@ function ProdectCard({product}:{product:ProductType}) {
 </div>
   </figure>
 
+  <div className="card-body bg-[#F4F5F7]">
   <Link href={`/productDetalies/${product.id}`}>
 
-  <div className="card-body bg-[#F4F5F7]">
     <h2 className="card-title line-clamp-1">{product.title}</h2>
     <p className='line-clamp-1 opacity-50'>{product.description}</p>
     <p className='text-[20px] font-[600] md:text-md'>{product.price}EGP</p>
    
-  </div>
 </Link>
+  <div className=' sm:hidden flex justify-center items-center gap-2 mt-2'>
 
+<BtnToAddCart id={product.id} btn={true} /> 
+<BtnAddWishlist id={product.id} btn={false} /> 
+
+       </div>
+  </div>
 
     </div>
   )
