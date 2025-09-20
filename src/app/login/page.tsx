@@ -121,7 +121,7 @@ console.log(res);
     )}
   />
   <Link href={"forgetPassword"} className='text-[#B88E2F] font-bold'>Forgot Password?</Link>
-  <Button className='w-full bg-[#B88E2F] hover:bg-white hover:border-1 hover:text-[#B88E2F] hover:border-[#B88E2F] my-5'>{isLoading ?<i className="fa-solid fa-spinner fa-span"></i>:"Login"}</Button>
+  <Button className='w-full bg-[#B88E2F] hover:bg-white hover:border-1 hover:text-[#B88E2F] hover:border-[#B88E2F] my-5'>{isLoading ?<i className="fa-solid fa-spinner fa-spin"></i>:"Login"}</Button>
   </form>
 </Form>
 <p className=''><span className='font-medium'>Do not have account?</span> <Link href="/register" className='font-bold text-[#B88E2F]'>Register Now</Link></p>

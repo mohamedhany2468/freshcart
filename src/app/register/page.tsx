@@ -158,7 +158,7 @@ setisLoading(false)
     )}
   />
 
-  <Button className='w-full bg-[#B88E2F] hover:bg-white hover:border-1 hover:text-[#B88E2F] hover:border-[#B88E2F] my-5'>{isLoading ?<i className="fa-solid fa-spinner fa-span"></i>:"Signup"}</Button>
+  <Button className='w-full bg-[#B88E2F] hover:bg-white hover:border-1 hover:text-[#B88E2F] hover:border-[#B88E2F] my-5'>{isLoading ?<i className="fa-solid fa-spinner fa-spin"></i>:"Signup"}</Button>
   </form>
 </Form>
 <p className=''><span className='font-medium'>Have an account?</span> <Link href="/login" className='font-bold text-[#B88E2F]'>Login</Link></p>

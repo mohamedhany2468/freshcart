@@ -68,7 +68,7 @@ router.push("/newPassword")
     )}
   />
 <Button className='w-full bg-[#B88E2F] hover:bg-white hover:border-1 hover:border-[#B88E2F] hover:text-[#B88E2F] mt-5'>
-    {isLoading?<i className="fa-solid fa-spinner fa-span"></i>:
+    {isLoading?<i className="fa-solid fa-spinner fa-spin"></i>:
      "Verify Code"
     }
    </Button>
