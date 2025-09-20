@@ -31,7 +31,7 @@ console.log(data);
     
     
     <div className='w-full md:w-[80%] mx-auto px-5 md:px-0'>
-      {data.map(function(order:Orders , idx:number){
+      {data.map(function(order: Orders, idx: number) {
         return <div key={idx}  className='bg-gray-50 p-5   rounded-xl mt-5 '>
 <div className='border-b-2 mb-3 border-black flex flex-wrap '>
 
